@@ -1,0 +1,38 @@
+source ~/.vimrc
+
+set ideajoin
+
+nnoremap gr :action ShowUsages<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap gs :action FindInPath<CR>
+nnoremap gn :action GotoNextError<CR>
+nnoremap gp :action GotoPreviousError<CR>
+
+" Leader Shortcuts
+nnoremap <Space><Space> :noh<CR>:action HideAllWindows<CR>
+nnoremap <Space>s :action ReformatCode<CR>:action OptimizeImports<CR>:w<CR>
+nnoremap <Space>t :action Rerun<CR>
+nnoremap <Space>c :action RenameElement<CR>
+nnoremap <Space>r :action RefactoringMenu<CR>
+nnoremap <Space>R :action Run<CR>
+nnoremap <Space>e :action RunClass<CR>
+nnoremap <Space>b :action ReformatCode<CR>:w<CR>:action MakeModule<CR>
+nnoremap <Space>B :action CompileProject<CR>
+nnoremap <Space>d :action ContextDebug<CR>
+
+nnoremap <Space>br :action ToggleLineBreakpoint<CR>
+nnoremap <Space>j :action StepInto<CR>
+nnoremap <Space>k :action StepOut<CR>
+nnoremap <Space>l :action StepOver<CR>
+
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
+
+nnoremap <Space>M :action Maven.Reimport<CR>
+nnoremap <Space>m :action ShowIntentionActions<CR>
+nnoremap <Space>n :action Generate<CR>
+nnoremap <Space>E :action Maven.ExecuteGoal<CR>
+
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
