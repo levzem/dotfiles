@@ -1,0 +1,5 @@
+--target=~
+--ignore=.stowrc
+--ignore=setup.sh
+--ignore=.*iml
+--ignore=.idea
