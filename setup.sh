@@ -38,5 +38,6 @@ install_cmd() {
 install_cmd "xcode-select"
 install_cmd "brew"
 install_cmd "stow"
+install_cmd "fzf"
 
 echo "Stowing dotfiles..." && stow .

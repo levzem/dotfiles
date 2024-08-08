@@ -1,3 +1,30 @@
+#   -----------------------------
+#       ZINIT CONFIGURATION
+#   -----------------------------
+
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+# Load completions
+autoload -Uz compinit && compinit
+zinit cdreplay -q
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
 #   -------------------------------
 #      ENVIRONMENT CONFIGURATION
 #   -------------------------------
@@ -24,6 +51,21 @@ if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-clou
 #       MAKE TERMINAL BETTER
 #   -----------------------------
 
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
 alias gc="git commit -m"
 alias gca="git commit -a -m"
 alias gcam="git commit --amend"
@@ -38,8 +80,8 @@ alias ga='git add'
 alias gr='git remote'
 alias gre='git reset'
 
-alias loadzsh='source ~/.zshrc'	       	    # sources the zsh profile
-alias editzsh='vim ~/.zshrc'         	    # edit the zsh profile
+alias reload='source ~/.zshrc'	       	    # sources the zshrc
+alias editzsh='vim ~/.zshrc'         	    # edit the zshrc
 
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
@@ -180,3 +222,9 @@ whosOn() { lsof -i tcp:${1} ; }
 
 alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'      # show hidden files in Finder
 alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'     # hide hidden files in Finder
+
+
+#    ----------------------
+#         INTEGRATIONS
+#    ----------------------
+eval "$(fzf --zsh)"
