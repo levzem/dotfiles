@@ -1,6 +1,8 @@
 source ~/.vimrc
 
 set ideajoin
+set commentary
+set surround
 
 nnoremap gr :action ShowUsages<CR>
 nnoremap gi :action GotoImplementation<CR>

@@ -1,6 +1,5 @@
 " Settings
 syntax on
-set surround
 set backspace=indent,eol,start
 set clipboard=unnamed
 set number
@@ -8,7 +7,6 @@ set showmatch
 set ignorecase
 set hidden
 set cursorline
-set commentary
 "set relativenumber
 
 " Spaces & Tabs
