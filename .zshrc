@@ -76,7 +76,8 @@ alias gl="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)
 alias gco="git checkout"
 alias gb='git branch'
 alias ga='git add'
-alias gr='git remote'
+alias gr='git rebase -i'
+alias gr='git rebase --continue'
 alias gre='git reset'
 
 alias reload='source ~/.zshrc'	       	    # sources the zshrc

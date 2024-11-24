@@ -39,5 +39,6 @@ install_cmd "xcode-select"
 install_cmd "brew"
 install_cmd "stow"
 install_cmd "fzf"
+install_cmd "ngrok/ngrok/ngrok"
 
 echo "Stowing dotfiles..." && stow .
