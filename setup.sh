@@ -39,6 +39,6 @@ install_cmd "xcode-select"
 install_cmd "brew"
 
 echo "Installing homebrew dependencies..."
-brew bundle check || brew bundle install
+brew bundle check >/dev/null || brew bundle install
 
 echo "Stowing dotfiles..." && stow .

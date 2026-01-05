@@ -1,3 +1,4 @@
 brew "stow"
 brew "fzf"
-brew "ngrok/ngrok/ngrok"
+cask "ngrok"
+cask "ghostty"
