@@ -37,8 +37,8 @@ install_cmd() {
 
 install_cmd "xcode-select"
 install_cmd "brew"
-install_cmd "stow"
-install_cmd "fzf"
-install_cmd "ngrok/ngrok/ngrok"
+
+echo "Installing homebrew dependencies..."
+brew bundle check || brew bundle install
 
 echo "Stowing dotfiles..." && stow .
