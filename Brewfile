@@ -1,4 +1,6 @@
 brew "stow"
 brew "fzf"
+brew "fd"
+brew "ripgrep"
 cask "ngrok"
 cask "ghostty"

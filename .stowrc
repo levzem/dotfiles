@@ -3,3 +3,4 @@
 --ignore=setup.sh
 --ignore=.*iml
 --ignore=.idea
+--ignore=Brewfile
