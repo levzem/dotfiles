@@ -6,6 +6,7 @@ brew "ripgrep"
 cask "ngrok"
 cask "ghostty"
 brew "neovim"
+cask "claude-code"
 
 # iOS development
 brew "coreutils"
