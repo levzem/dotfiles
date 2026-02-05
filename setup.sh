@@ -19,4 +19,11 @@ fi
 echo "Installing homebrew dependencies..."
 brew bundle check >/dev/null || brew bundle install
 
+echo "Configuring MacOS preferences..."
+if [[ $OSTYPE == "darwin*" ]]; then
+    defaults write -g InitialKeyRepeat -int 10
+    defaults write -g KeyRepeat -int 1
+    defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+fi
+
 echo "Stowing dotfiles..." && stow .
