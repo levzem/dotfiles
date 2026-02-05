@@ -77,8 +77,9 @@ alias gco="git checkout"
 alias gb='git branch'
 alias ga='git add'
 alias gr='git rebase -i'
-alias gr='git rebase --continue'
+alias grc='git rebase --continue'
 alias gre='git reset'
+alias gd='git branch -D'
 
 alias reload='source ~/.zshrc'	       	    # sources the zshrc
 alias editzsh='vim ~/.zshrc'         	    # edit the zshrc
