@@ -673,6 +673,13 @@ require('lazy').setup({
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
+      formatters = {
+        swiftformat = {
+          command = 'swift',
+          args = { 'format' },
+          stdin = true,
+        },
+      },
     },
   },
 
