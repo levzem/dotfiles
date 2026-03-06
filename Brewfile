@@ -7,6 +7,8 @@ cask "ngrok"
 cask "ghostty"
 brew "neovim"
 cask "claude-code"
+brew "markdownlint-cli"
+brew "gh"
 
 # iOS development
 brew "coreutils"
