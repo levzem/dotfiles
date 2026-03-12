@@ -150,8 +150,9 @@ configure_dock() {
   dockutil --remove all
 
   dockutil --add /System/Applications/Apps.app
-  dockutil --add /Applications/Safari.app
   dockutil --add /Applications/Ghostty.app
+  dockutil --add /Applications/Safari.app
+  dockutil --add /Applications/Slack.app
   dockutil --add /System/Applications/Messages.app
   dockutil --add /System/Applications/System\ Settings.app
   dockutil --add /Users/lev/Downloads/ --section others
