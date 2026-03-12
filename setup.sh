@@ -141,6 +141,22 @@ install_apps() {
   brew bundle --file="$DOTFILES_DIR/Brewfile"
 }
 
+configure_dock() {
+  log "Configuring dock..."
+
+  brew install dockutil
+
+  defaults write com.apple.dock show-recents -bool false
+  dockutil --remove all
+
+  dockutil --add /System/Applications/Apps.app
+  dockutil --add /Applications/Safari.app
+  dockutil --add /Applications/Ghostty.app
+  dockutil --add /System/Applications/Messages.app
+  dockutil --add /System/Applications/System\ Settings.app
+  dockutil --add /Users/lev/Downloads/ --section others
+}
+
 configure_macos() {
   if [[ "$OSTYPE" == darwin* ]]; then
     log "Configuring macOS preferences..."
@@ -160,5 +176,6 @@ stow_dotfiles
 setup_github_ssh_key
 update_dotfiles
 install_apps
+configure_dock
 configure_macos
 
