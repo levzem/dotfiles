@@ -1,0 +1,5 @@
+[user]
+	name = Lev Zemlyanov
+	email = levzemlyan@gmail.com
+[pull]
+	rebase = true

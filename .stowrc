@@ -4,3 +4,4 @@
 --ignore=.*iml
 --ignore=.idea
 --ignore=Brewfile
+--ignore=README.md
