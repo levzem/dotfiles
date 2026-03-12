@@ -26,6 +26,10 @@ vim.o.smartcase = true -- Case-sensitive if \C or one or more capital letters in
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.timeoutlen = 300 -- Decrease mapped sequence wait time
+vim.o.expandtab = true -- Use spaces instead of tabs
+vim.o.shiftwidth = 2 -- Number of spaces for each indent
+vim.o.tabstop = 2 -- Number of spaces a tab counts for
+vim.o.softtabstop = 2 -- Number of spaces for <Tab> in insert mode
 vim.o.undofile = true -- Save undo history
 vim.o.updatetime = 250 -- Decrease update time
 
@@ -547,13 +551,7 @@ require('lazy').setup({
         -- gopls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
+        vtsls = {},
 
         pyright = {
           settings = {
@@ -604,6 +602,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'ruff', -- Python linter/formatter
+        'eslint_d', -- JavaScript/TypeScript linter
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

@@ -10,6 +10,8 @@ cask "claude-code"
 brew "markdownlint-cli"
 brew "gh"
 
+brew "vtsls"
+
 # iOS development
 brew "coreutils"
 brew "swiftformat"
