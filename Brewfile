@@ -10,8 +10,13 @@ cask "ngrok"
 cask "ghostty"
 brew "neovim"
 cask "claude-code"
+brew "docker"
+cask "docker-desktop"
 brew "markdownlint-cli"
 brew "gh"
+
+# JS/TS development
+brew "nvm"
 brew "vtsls"
 
 # iOS development

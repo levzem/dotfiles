@@ -2,3 +2,4 @@
 *.iml
 .DS_STORE
 *.swp
+.config/cagent

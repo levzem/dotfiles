@@ -26,17 +26,21 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 #   -------------------------------
+#      TOOL CONFIGURATION
+#   -------------------------------
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+NVM_INSTALLATION="$HOMEBREW_PREFIX/opt/nvm"
+[ -s "$NVM_INSTALLATION/nvm.sh" ] && \. "$NVM_INSTALLATION/nvm.sh"
+[ -s "$NVM_INSTALLATION/etc/bash_completion.d/nvm" ] && \. "$NVM_INSTALLATION/etc/bash_completion.d/nvm"
+
+#   -------------------------------
 #      ENVIRONMENT CONFIGURATION
 #   -------------------------------
 
 export EDITOR=/usr/bin/vim  # set default text editor
 export BLOCKSIZE=1k         # set default blocksize for for ls, df, du to 1 kilobyte
-
-# TODO: WTF
-# Set up NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # TODO: WTF
 export PATH="/usr/local/opt/libpq/bin:$PATH"    # setup libpg
